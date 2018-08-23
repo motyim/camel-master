@@ -141,10 +141,3 @@ If you want to run order processing, click Orders -> Process Orders
 
 If you want to reset the orders back to new status, click Orders -> Reset Orders
 
-## Contact Information
-
-If you have any questions, please feel free to contact me:
-
-Michael Hoffman
-mike@michaelhoffmaninc.com
-@mhi_inc"# camel-master" 
