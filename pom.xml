@@ -1,63 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
 	<repositories>
 		<repository>
 			<id>central</id>
 			<url>http://central.maven.org/maven2/</url>
 		</repository>
- 	</repositories>
+	</repositories>
 
-	<groupId>me.motyim.learn.camel</groupId>
+	<groupId>com.pluralsight.camel</groupId>
 	<artifactId>order-fulfillment-processor</artifactId>
 	<version>1.0-SNAPSHOT</version>
 
-    <dependencies>
+	<dependencies>
 
-    	<!-- SPRING FRAMEWORK -->
+		<!-- Camel FRAMEWORK -->
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-spring</artifactId>
+			<version>2.13.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-spring-javaconfig</artifactId>
+			<version>2.13.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-test-spring</artifactId>
+			<version>2.13.2</version>
+			<scope>test</scope>
+		</dependency>
 
-        <!-- Spring framework core dependency minus commons logging in favor of SLF4J -->
-        <dependency>
-        	<groupId>org.springframework</groupId>
-        	<artifactId>spring-core</artifactId>
-            <version>4.0.4.RELEASE</version>
-        	<exclusions>
-        		<exclusion>
-        			<groupId>commons-logging</groupId>
-        			<artifactId>commons-logging</artifactId>
-        		</exclusion>
-        	</exclusions>
-        </dependency>
+
+
+		<!-- SPRING FRAMEWORK -->
+
+		<!-- Spring framework core dependency minus commons logging in favor of SLF4J -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>4.0.4.RELEASE</version>
+			<exclusions>
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
 
 		<!-- Spring aspects -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-aspects</artifactId>
-            <version>4.0.4.RELEASE</version>
+			<version>4.0.4.RELEASE</version>
 		</dependency>
 
 		<!-- Spring MVC -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
-            <version>4.0.4.RELEASE</version>
+			<version>4.0.4.RELEASE</version>
 		</dependency>
 
 		<!-- Spring MVC -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
-            <version>4.0.4.RELEASE</version>
+			<version>4.0.4.RELEASE</version>
 		</dependency>
 
 		<!-- Spring JDBC -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-jdbc</artifactId>
-            <version>4.0.4.RELEASE</version>
+			<version>4.0.4.RELEASE</version>
 		</dependency>
 
 		<!-- Spring Data JPA -->
@@ -71,8 +91,8 @@
 					<groupId>org.springframework</groupId>
 				</exclusion>
 			</exclusions>
-		</dependency> 		
-	
+		</dependency>
+
 		<!-- HIBERNATE -->
 		<dependency>
 			<groupId>javax.validation</groupId>
@@ -103,14 +123,14 @@
 			<artifactId>hibernate-jpa-2.1-api</artifactId>
 			<version>1.0.0.Final</version>
 		</dependency>
-            
+
 		<!-- Spring ORM -->
-        <dependency>
+		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-orm</artifactId>
-            <version>4.0.4.RELEASE</version>
+			<version>4.0.4.RELEASE</version>
 		</dependency>
-		
+
 		<!-- LOGGING -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -165,7 +185,7 @@
 			<groupId>commons-dbcp</groupId>
 			<artifactId>commons-dbcp</artifactId>
 			<version>1.4</version>
-		</dependency>		
+		</dependency>
 
 		<!-- Java Servlet -->
 		<dependency>
@@ -184,7 +204,7 @@
 			<groupId>jstl</groupId>
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
- 		</dependency>
+		</dependency>
 		<!-- Jackson JSON mapper -->
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
@@ -217,10 +237,10 @@
 		</dependency>
 
 		<!-- TESTING -->
-        <dependency>
+		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
-            <version>4.0.4.RELEASE</version>
+			<version>4.0.4.RELEASE</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
@@ -230,9 +250,9 @@
 			<scope>test</scope>
 			<exclusions>
 				<exclusion>
-		          <groupId>org.hamcrest</groupId>
-		          <artifactId>hamcrest-core</artifactId>
-		        </exclusion>
+					<groupId>org.hamcrest</groupId>
+					<artifactId>hamcrest-core</artifactId>
+				</exclusion>
 			</exclusions>
 		</dependency>
 		<dependency>
@@ -248,9 +268,9 @@
 			<scope>test</scope>
 		</dependency>
 
-    </dependencies>
+	</dependencies>
 
-    <build>
+	<build>
 		<resources>
 			<resource>
 				<directory>src/main/resources</directory>
@@ -338,64 +358,6 @@
 				</configuration>
 			</plugin>
 		</plugins>
-		<pluginManagement>
-			<plugins>
-				<!--This plugin's configuration is used to store Eclipse m2e settings 
-					only. It has no influence on the Maven build itself. -->
-				<plugin>
-					<groupId>org.eclipse.m2e</groupId>
-					<artifactId>lifecycle-mapping</artifactId>
-					<version>1.0.0</version>
-					<configuration>
-						<lifecycleMappingMetadata>
-							<pluginExecutions>
-								<pluginExecution>
-									<pluginExecutionFilter>
-										<groupId>
-											org.codehaus.mojo
-										</groupId>
-										<artifactId>
-											properties-maven-plugin
-										</artifactId>
-										<versionRange>
-											[1.0-alpha-2,)
-										</versionRange>
-										<goals>
-											<goal>
-												write-active-profile-properties
-											</goal>
-										</goals>
-									</pluginExecutionFilter>
-									<action>
-										<execute></execute>
-									</action>
-								</pluginExecution>
-								<pluginExecution>
-									<pluginExecutionFilter>
-										<groupId>
-											org.codehaus.mojo
-										</groupId>
-										<artifactId>
-											aspectj-maven-plugin
-										</artifactId>
-										<versionRange>
-											[1.5,)
-										</versionRange>
-										<goals>
-											<goal>compile</goal>
-											<goal>test-compile</goal>
-										</goals>
-									</pluginExecutionFilter>
-									<action>
-										<ignore></ignore>
-									</action>
-								</pluginExecution>
-							</pluginExecutions>
-						</lifecycleMappingMetadata>
-					</configuration>
-				</plugin>
-			</plugins>
-		</pluginManagement>
 		<finalName>ofp</finalName>
-    </build>
+	</build>
 </project>
